@@ -19,6 +19,6 @@ class LogoView: UIView {
     }
     
     private func layout() {
-        backgroundColor = .red
+        backgroundColor = .purple
     }
 }
