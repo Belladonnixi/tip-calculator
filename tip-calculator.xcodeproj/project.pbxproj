@@ -33,6 +33,7 @@
 		095C1F3E2BC43E1A003DD7A0 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F3D2BC43E19003DD7A0 /* LabelFactory.swift */; };
 		095C1F402BC47839003DD7A0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F3F2BC47839003DD7A0 /* UIView+Extension.swift */; };
 		095C1F422BC48DD0003DD7A0 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F412BC48DD0003DD7A0 /* AmountView.swift */; };
+		095C1F442BC572D4003DD7A0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F432BC572D4003DD7A0 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		095C1F3D2BC43E19003DD7A0 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		095C1F3F2BC47839003DD7A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		095C1F412BC48DD0003DD7A0 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		095C1F432BC572D4003DD7A0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				095C1F302BC400C3003DD7A0 /* TipInputView.swift */,
 				095C1F322BC400F5003DD7A0 /* SplitInputView.swift */,
 				095C1F412BC48DD0003DD7A0 /* AmountView.swift */,
+				095C1F432BC572D4003DD7A0 /* HeaderView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				095C1F2D2BC40039003DD7A0 /* ResultView.swift in Sources */,
 				095C1EE52BC3D185003DD7A0 /* AppDelegate.swift in Sources */,
 				095C1F382BC42C0F003DD7A0 /* ThemeFont.swift in Sources */,
+				095C1F442BC572D4003DD7A0 /* HeaderView.swift in Sources */,
 				095C1EE72BC3D185003DD7A0 /* SceneDelegate.swift in Sources */,
 				095C1F3E2BC43E1A003DD7A0 /* LabelFactory.swift in Sources */,
 				095C1F332BC400F5003DD7A0 /* SplitInputView.swift in Sources */,
