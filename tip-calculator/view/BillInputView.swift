@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillInputView: UIView {
     
@@ -56,15 +58,30 @@ class BillInputView: UIView {
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
         return textField
-    }()
+    }(
+    
+    private let billSubject: PassthroughSubject<Double, Never> = .init()
+    var valuePublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func observe() {
+        textField.textPublisher.sink { [unowned self] text in
+            billSubject.send(text?.doubleValue ?? 0)
+            print("Text: \(text ?? "none")")
+        }.store(in: &cancellables)
     }
     
     private func layout() {
