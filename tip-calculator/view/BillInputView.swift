@@ -58,7 +58,8 @@ class BillInputView: UIView {
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
         return textField
-    }(
+    }()
+
     
     private let billSubject: PassthroughSubject<Double, Never> = .init()
     var valuePublisher: AnyPublisher<Double, Never> {
