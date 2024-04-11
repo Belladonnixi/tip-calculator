@@ -12,7 +12,7 @@ enum Tip {
     case tenPercent
     case fifteenPercent
     case twentyPercent
-    case custom(vaue: Int)
+    case custom(value: Int)
     
     var stringValue: String {
         switch self {
@@ -24,7 +24,7 @@ enum Tip {
             return "15%"
         case .twentyPercent:
             return "20%"
-        case .custom(vaue: let value):
+        case .custom(value: let value):
             return String(value)
         }
     }
