@@ -10,23 +10,32 @@ import UIKit
 class ResultView: UIView {
     
     private let headerLabel: UILabel = {
-        LabelFactory.build(
+        let fontSize = UIScreen.main.bounds.size.width * 0.045
+        let label = LabelFactory.build(
             text: "Total p/person",
-            font: ThemeFont.demiBold(ofSize: 18))
+            font: ThemeFont.demiBold(ofSize: fontSize))
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 0
+        return label
     }()
     
     private let amountPerPersonLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        let fontSize = UIScreen.main.bounds.size.width * 0.12
         let text = NSMutableAttributedString(
             string: "0€",
             attributes: [
-                .font: ThemeFont.bold(ofSize: 48)
+                .font: ThemeFont.bold(ofSize: fontSize)
             ])
         label.attributedText = text
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 0
         return label
     }()
-    
+        
     private let horizontalLineView: UIView = {
         let view = UIView()
         view.backgroundColor = ThemeColor.separator
@@ -81,13 +90,13 @@ class ResultView: UIView {
     }
     
     func configure(result: Result) {
-      let text = NSMutableAttributedString(
-        string: result.amountPerPerson.currencyFormatted,
-        attributes: [.font: ThemeFont.bold(ofSize: 48)])
-      amountPerPersonLabel.attributedText = text
-
-      totalBillView.configure(amount: result.totalBill)
-      totalTipView.configure(amount: result.totalTip)
+        let text = NSMutableAttributedString(
+            string: result.amountPerPerson.currencyFormatted,
+            attributes: [.font: ThemeFont.bold(ofSize: 48)])
+        amountPerPersonLabel.attributedText = text
+        
+        totalBillView.configure(amount: result.totalBill)
+        totalTipView.configure(amount: result.totalTip)
     }
     
     private func layout() {
@@ -95,10 +104,18 @@ class ResultView: UIView {
         addSubview(vStackView)
         
         vStackView.snp.makeConstraints { make in
-            make.top.equalTo(snp.top).offset(24)
-            make.leading.equalTo(snp.leading).offset(24)
-            make.trailing.equalTo(snp.trailing).offset(-24)
-            make.bottom.equalTo(snp.bottom).offset(-24)
+            make.top.equalTo(snp.top).offset(16)
+            make.leading.equalTo(snp.leading).offset(16)
+            make.trailing.equalTo(snp.trailing).offset(-16)
+            make.bottom.equalTo(snp.bottom).offset(-16)
+        }
+        
+        headerLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(20)
+        }
+        
+        amountPerPersonLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(40)
         }
         
         horizontalLineView.snp.makeConstraints { make in
