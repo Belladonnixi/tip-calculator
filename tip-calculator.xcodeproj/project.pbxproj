@@ -41,6 +41,8 @@
 		095C1F502BC857A3003DD7A0 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F4F2BC857A3003DD7A0 /* UIResponder+Extension.swift */; };
 		095C1F522BC926A7003DD7A0 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F512BC926A7003DD7A0 /* Int+Extension.swift */; };
 		095C1F542BC95619003DD7A0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F532BC95619003DD7A0 /* Double+Extension.swift */; };
+		095C1F592BC98947003DD7A0 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C1F582BC98947003DD7A0 /* AudioPlayerService.swift */; };
+		09B39BD92BC9920300A55C50 /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 09B39BD82BC9920300A55C50 /* click.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		095C1F4F2BC857A3003DD7A0 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		095C1F512BC926A7003DD7A0 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		095C1F532BC95619003DD7A0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		095C1F582BC98947003DD7A0 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		09B39BD82BC9920300A55C50 /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 		095C1EE32BC3D185003DD7A0 /* tip-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				095C1F572BC988B9003DD7A0 /* service */,
+				095C1F552BC985E8003DD7A0 /* resource */,
 				095C1F482BC5A5F6003DD7A0 /* view-model */,
 				095C1F452BC59824003DD7A0 /* model */,
 				095C1F3C2BC43E06003DD7A0 /* factory */,
@@ -249,6 +255,22 @@
 				095C1F492BC5A618003DD7A0 /* CalculatorVM.swift */,
 			);
 			path = "view-model";
+			sourceTree = "<group>";
+		};
+		095C1F552BC985E8003DD7A0 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				09B39BD82BC9920300A55C50 /* click.m4a */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		095C1F572BC988B9003DD7A0 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				095C1F582BC98947003DD7A0 /* AudioPlayerService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B39BD92BC9920300A55C50 /* click.m4a in Resources */,
 				095C1EEE2BC3D186003DD7A0 /* Assets.xcassets in Resources */,
 				095C1EF12BC3D186003DD7A0 /* Base in Resources */,
 			);
@@ -411,6 +434,7 @@
 				095C1F2B2BC3FE19003DD7A0 /* LogoView.swift in Sources */,
 				095C1F362BC42C01003DD7A0 /* ThemeColor.swift in Sources */,
 				095C1F3B2BC42CD7003DD7A0 /* UIColor+Extension.swift in Sources */,
+				095C1F592BC98947003DD7A0 /* AudioPlayerService.swift in Sources */,
 				095C1F2F2BC40088003DD7A0 /* BillInputView.swift in Sources */,
 				095C1F2D2BC40039003DD7A0 /* ResultView.swift in Sources */,
 				095C1EE52BC3D185003DD7A0 /* AppDelegate.swift in Sources */,
