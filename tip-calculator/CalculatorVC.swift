@@ -64,7 +64,8 @@ class CalculatorVC: UIViewController {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitInputView.valuePublisher)
+            splitPublisher: splitInputView.valuePublisher, 
+            logoViewTapPublisher: logoViewTapPublisher)
         
         let output = vm.transform(input: input)
         
@@ -72,6 +73,9 @@ class CalculatorVC: UIViewController {
             resultView.configure(result: result)
         }.store(in: &cancellables)
         
+        output.resetCalculatorPublisher.sink { _ in
+            print("hey, reset the form please")
+        }.store(in: &cancellables)
     }
     
     private func observe() {
@@ -79,9 +83,6 @@ class CalculatorVC: UIViewController {
             view.endEditing(true)
         }.store(in: &cancellables)
         
-        logoViewTapPublisher.sink { _ in
-            print("logoView is tapped")
-        }.store(in: &cancellables)
     }
     
     private func layout() {
