@@ -71,4 +71,45 @@ class CalculatorScreen {
     var splitViewQuantityLabel: XCUIElement {
         app.staticTexts[ScreenIdentifier.SplitInputView.quantityLabel.rawValue]
     }
+    
+    // Actions
+    
+    func enterBill(amount: Double) {
+        billInputTextField.tap()
+        billInputTextField.typeText("\(amount)")
+    }
+    
+    func selectTip(tip: Tip) {
+        switch tip {
+        case .tenPercent:
+            tenPercentTipButton.tap()
+        case .fifteenPercent:
+            fifteenPercentTipButton.tap()
+        case .twentyPercent:
+            twentyPercentTipButton.tap()
+        case .custom(value: let value):
+            customTipButton.tap()
+            XCTAssert(customTipAlertTextField.waitForExistence(timeout: 1.0))
+            customTipAlertTextField.typeText("\(value)")
+        }
+    }
+    
+    func selectIncrementButton(numberOfTaps: Int) {
+        incrementSplitViewButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
+    }
+    
+    func selectDecrementButton(numberOfTaps: Int) {
+        decrementSplitViewButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
+    }
+    
+    func doubleTapLogoView() {
+        logoview.tap(withNumberOfTaps: 2, numberOfTouches: 1)
+    }
+    
+    enum Tip {
+        case tenPercent
+        case fifteenPercent
+        case twentyPercent
+        case custom(value: Int)
+    }
 }
