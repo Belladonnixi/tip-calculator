@@ -15,30 +15,30 @@ class CalculatorScreen {
         self.app = app
     }
     
-    //LogoView
-    var logoview: XCUIElement {
-        app.otherElements[ScreenIdentifier.LogoView.logoview.rawValue]
+    // LogoView
+    var logoView: XCUIElement {
+       app.otherElements[ScreenIdentifier.LogoView.logoView.rawValue]
     }
     
     // ResultView
-    var totalAmountPerPercentLabel: XCUIElement {
-        app.staticTexts[ScreenIdentifier.ResultView.totalAmountPerPesonValueLabel.rawValue]
+    var totalAmountPerPersonValueLabel: XCUIElement {
+       app.staticTexts[ScreenIdentifier.ResultView.totalAmountPerPersonValueLabel.rawValue]
     }
     
     var totalBillValueLabel: XCUIElement {
-        app.staticTexts[ScreenIdentifier.ResultView.totalBillValueLabel.rawValue]
+       app.staticTexts[ScreenIdentifier.ResultView.totalBillValueLabel.rawValue]
     }
     
     var totalTipValueLabel: XCUIElement {
-        app.staticTexts[ScreenIdentifier.ResultView.totalTipValueLabel.rawValue]
+       app.staticTexts[ScreenIdentifier.ResultView.totalTipValueLabel.rawValue]
     }
     
     // BillInputView
-    var billInputTextField: XCUIElement {
-        app.textFields[ScreenIdentifier.BillInputView.textField.rawValue]
+    var billInputViewTextField: XCUIElement {
+       app.textFields[ScreenIdentifier.BillInputView.textField.rawValue]
     }
     
-    // TipInputView
+    // TipInpitView
     var tenPercentTipButton: XCUIElement {
       app.buttons[ScreenIdentifier.TipInputView.tenPercentButton.rawValue]
     }
@@ -60,56 +60,56 @@ class CalculatorScreen {
     }
     
     // SplitInputView
-    var decrementSplitViewButton: XCUIElement {
-        app.buttons[ScreenIdentifier.SplitInputView.decrementButton.rawValue]
+    var incrementButton: XCUIElement {
+      app.buttons[ScreenIdentifier.SplitInputView.incrementButton.rawValue]
     }
     
-    var incrementSplitViewButton: XCUIElement {
-        app.buttons[ScreenIdentifier.SplitInputView.incrementButton.rawValue]
+    var decrementButton: XCUIElement {
+      app.buttons[ScreenIdentifier.SplitInputView.decrementButton.rawValue]
     }
     
-    var splitViewQuantityLabel: XCUIElement {
-        app.staticTexts[ScreenIdentifier.SplitInputView.quantityLabel.rawValue]
+    var splitValueLabel: XCUIElement {
+      app.staticTexts[ScreenIdentifier.SplitInputView.quantityLabel.rawValue]
     }
     
     // Actions
     
     func enterBill(amount: Double) {
-        billInputTextField.tap()
-        billInputTextField.typeText("\(amount)")
+      billInputViewTextField.tap()
+      billInputViewTextField.typeText("\(amount)\n")
     }
     
     func selectTip(tip: Tip) {
-        switch tip {
-        case .tenPercent:
-            tenPercentTipButton.tap()
-        case .fifteenPercent:
-            fifteenPercentTipButton.tap()
-        case .twentyPercent:
-            twentyPercentTipButton.tap()
-        case .custom(value: let value):
-            customTipButton.tap()
-            XCTAssert(customTipAlertTextField.waitForExistence(timeout: 1.0))
-            customTipAlertTextField.typeText("\(value)")
-        }
+      switch tip {
+      case .tenPercent:
+        tenPercentTipButton.tap()
+      case .fifteenPercent:
+        fifteenPercentTipButton.tap()
+      case .twentyPercent:
+        twentyPercentTipButton.tap()
+      case .custom(let value):
+        customTipButton.tap()
+        XCTAssertTrue(customTipAlertTextField.waitForExistence(timeout: 1.0))
+        customTipAlertTextField.typeText("\(value)\n")
+      }
     }
     
     func selectIncrementButton(numberOfTaps: Int) {
-        incrementSplitViewButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
+      incrementButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
     }
     
     func selectDecrementButton(numberOfTaps: Int) {
-        decrementSplitViewButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
+      decrementButton.tap(withNumberOfTaps: numberOfTaps, numberOfTouches: 1)
     }
     
     func doubleTapLogoView() {
-        logoview.tap(withNumberOfTaps: 2, numberOfTouches: 1)
+      logoView.tap(withNumberOfTaps: 2, numberOfTouches: 1)
     }
     
     enum Tip {
-        case tenPercent
-        case fifteenPercent
-        case twentyPercent
-        case custom(value: Int)
+      case tenPercent
+      case fifteenPercent
+      case twentyPercent
+      case custom(value: Int)
     }
 }

@@ -10,11 +10,11 @@ import Foundation
 enum ScreenIdentifier {
     
     enum LogoView: String {
-        case logoview
+        case logoView
     }
     
     enum ResultView: String {
-        case totalAmountPerPesonValueLabel
+        case totalAmountPerPersonValueLabel
         case totalBillValueLabel
         case totalTipValueLabel
     }

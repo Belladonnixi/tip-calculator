@@ -33,7 +33,7 @@ class ResultView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
-        label.accessibilityIdentifier = ScreenIdentifier.ResultView.totalAmountPerPesonValueLabel.rawValue
+        label.accessibilityIdentifier = ScreenIdentifier.ResultView.totalAmountPerPersonValueLabel.rawValue
         return label
     }()
         
