@@ -15,15 +15,60 @@ class CalculatorScreen {
         self.app = app
     }
     
+    //LogoView
+    var logoview: XCUIElement {
+        app.otherElements[ScreenIdentifier.LogoView.logoview.rawValue]
+    }
+    
+    // ResultView
     var totalAmountPerPercentLabel: XCUIElement {
-        return app.staticTexts[ScreenIdentifier.ResultView.totalAmountPerPesonValueLabel.rawValue]
+        app.staticTexts[ScreenIdentifier.ResultView.totalAmountPerPesonValueLabel.rawValue]
     }
     
     var totalBillValueLabel: XCUIElement {
-        return app.staticTexts[ScreenIdentifier.ResultView.totalBillValueLabel.rawValue]
+        app.staticTexts[ScreenIdentifier.ResultView.totalBillValueLabel.rawValue]
     }
     
     var totalTipValueLabel: XCUIElement {
-        return app.staticTexts[ScreenIdentifier.ResultView.totalTipValueLabel.rawValue]
+        app.staticTexts[ScreenIdentifier.ResultView.totalTipValueLabel.rawValue]
+    }
+    
+    // BillInputView
+    var billInputTextField: XCUIElement {
+        app.textFields[ScreenIdentifier.BillInputView.textField.rawValue]
+    }
+    
+    // TipInputView
+    var tenPercentTipButton: XCUIElement {
+      app.buttons[ScreenIdentifier.TipInputView.tenPercentButton.rawValue]
+    }
+    
+    var fifteenPercentTipButton: XCUIElement {
+      app.buttons[ScreenIdentifier.TipInputView.fifteenPercentButton.rawValue]
+    }
+    
+    var twentyPercentTipButton: XCUIElement {
+      app.buttons[ScreenIdentifier.TipInputView.twentyPercentButton.rawValue]
+    }
+    
+    var customTipButton: XCUIElement {
+      app.buttons[ScreenIdentifier.TipInputView.customTipButton.rawValue]
+    }
+    
+    var customTipAlertTextField: XCUIElement {
+      app.textFields[ScreenIdentifier.TipInputView.customTipAlertTextField.rawValue]
+    }
+    
+    // SplitInputView
+    var decrementSplitViewButton: XCUIElement {
+        app.buttons[ScreenIdentifier.SplitInputView.decrementButton.rawValue]
+    }
+    
+    var incrementSplitViewButton: XCUIElement {
+        app.buttons[ScreenIdentifier.SplitInputView.incrementButton.rawValue]
+    }
+    
+    var splitViewQuantityLabel: XCUIElement {
+        app.staticTexts[ScreenIdentifier.SplitInputView.quantityLabel.rawValue]
     }
 }
