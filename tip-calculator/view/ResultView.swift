@@ -33,6 +33,7 @@ class ResultView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
+        label.accessibilityIdentifier = ScreenIdentifier.ResultView.totalAmountPerPesonValueLabel.rawValue
         return label
     }()
         
@@ -58,14 +59,16 @@ class ResultView: UIView {
     private let totalTipView: AmountView = {
         let view = AmountView(
             title: "Total tip",
-            textAlignement: .right)
+            textAlignement: .right, 
+            amountLabelIdentifier: ScreenIdentifier.ResultView.totalTipValueLabel.rawValue)
         return view
     }()
     
     private let totalBillView: AmountView = {
         let view = AmountView(
             title: "Total bill",
-            textAlignement: .left)
+            textAlignement: .left, 
+            amountLabelIdentifier: ScreenIdentifier.ResultView.totalBillValueLabel.rawValue)
         return view
     }()
     
