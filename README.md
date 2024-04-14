@@ -1,4 +1,4 @@
-Simple Tip Calcululator learning project for UIKit only with MVVM and testing 
+Simple Tip Calcululator learning project for UIKit only with MVVM and testing (unit, ui, snapshot)
 
 used packages:
 - Combine Cocoa
